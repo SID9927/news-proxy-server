@@ -4,17 +4,7 @@ const app = express();
 const axios = require('axios');
 const cors = require('cors');
 
-const corsOptions = {
-  origin: 'https://news-website-project.netlify.app',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-};
-
-app.use(cors(corsOptions));
-
-
-app.use(cors(corsOptions));
-
+app.use(cors());
 
 const API_KEY = process.env.NEWS_API_KEY;
 const BASE_URL = 'https://newsapi.org/v2';
