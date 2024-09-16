@@ -2,13 +2,16 @@ const express = require('express');
 const serverless = require('serverless-http');
 const app = express();
 const axios = require('axios');
-// const cors = require('cors');
-// app.use(cors());
+const cors = require('cors');
 
 const corsOptions = {
   origin: 'https://news-website-project.netlify.app',
-  optionsSuccessStatus: 200
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
+
+app.use(cors(corsOptions));
+
 
 app.use(cors(corsOptions));
 
